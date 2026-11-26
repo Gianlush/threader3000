@@ -150,10 +150,10 @@ def main():
 
     if from_file:
         # -iL: il file con gli host vivi viene scritto nella cartella di output
-        nmap = "nmap -p{ports} -sV -sC -T4 -Pn -oA {label} -iL {lf}".format(
+        nmap = "nmap -p{ports} -sV -sC -T4 -Pn -oA {label} --open -iL {lf}".format(
             ports=ports_str, label=label, lf=LIVE_HOSTS_FILE)
     else:
-        nmap = "nmap -p{ports} -sV -sC -T4 -Pn -oA {ip} {ip}".format(
+        nmap = "nmap -p{ports} -sV -sC -T4 -Pn -oA {ip} --open {ip}".format(
             ports=ports_str, ip=label)
 
     print("Threader3000 recommends the following Nmap scan:")
